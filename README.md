@@ -1,50 +1,99 @@
-# Welcome to your Expo app 👋
+Cinemas App
+This project is a React Native application that provides information about movies and shows, including a pull-to-refresh feature, search functionality, sorting, filtering, and layout toggle (grid/list view).
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Features
+Search: Search movies and shows by title.
+Sort: Sort the list alphabetically (A-Z or Z-A).
+Filter: Filter content by type (Movies or Shows).
+Toggle View: Switch between grid and list layouts.
+Pull to Refresh: Refresh the data with a pull-down gesture.
+Navigation: Navigate to detailed pages for movies and shows.
+Hamburger Menu and Profile: Interactive header buttons.
+Assumptions
+Data Source:
 
-## Get started
+Movies and shows data is fetched from a mock API function fetchMoviesAndShows located in the ../api/moviesApi file.
+Each item in the dataset includes fields like:
+id: Unique identifier for the movie/show.
+title: Title of the movie/show.
+type: Indicates whether it's a movie or show.
+poster_url: URL for the poster image.
+Description: Brief description of the movie/show.
+Dependencies:
 
-1. Install dependencies
+This project uses the react-native framework.
+Icons are provided by @expo/vector-icons.
+Navigation:
 
-   ```bash
-   npm install
-   ```
+The app assumes React Navigation is properly configured.
+Two navigation routes are required:
+HomeScreen: This is the main screen.
+MovieDetails: Displays detailed information about a movie or show.
+UI Components:
 
-2. Start the app
+Pull-to-refresh functionality uses FlatList’s native onRefresh and refreshing props.
+Grid and list layouts dynamically change based on the isGrid state.
+Setup Instructions
+Prerequisites
+Environment Setup:
 
-   ```bash
-    npx expo start
-   ```
+Install Node.js (Recommended version: 18 or later).
+Install Expo CLI for React Native development:
+bash
+Copy code
+npm install -g expo-cli
+Install dependencies for React Native.
+Install Dependencies:
 
-In the output, you'll find options to open the app in a
+Run the following command in the project directory:
+bash
+Copy code
+npm install
+Mock API Setup:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Ensure the ../api/moviesApi.js file contains a mock function fetchMoviesAndShows that returns an array of movie and show objects.
+React Navigation Setup:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Install @react-navigation/native and related dependencies:
+bash
+Copy code
+npm install @react-navigation/native react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated react-native-vector-icons
+Platform-Specific Setup (Optional):
 
-## Get a fresh project
+For iOS: Install CocoaPods dependencies.
+bash
+Copy code
+npx pod-install
+Running the Application
+Start the Development Server:
 
-When you're ready, run:
+bash
+Copy code
+npm start
+Run on Emulator or Device:
 
-```bash
-npm run reset-project
-```
+For Android:
+bash
+Copy code
+npm run android
+For iOS:
+bash
+Copy code
+npm run ios
+Access the App:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Scan the QR code in the Expo Go app or run it on your configured emulator.
+Troubleshooting
+Pull-to-Refresh Not Working:
 
-## Learn more
+Ensure refreshing state is correctly updated in the onRefresh function.
+Navigation Errors:
 
-To learn more about developing your project with Expo, look at the following resources:
+Verify that the navigation setup includes HomeScreen and MovieDetails routes.
+Data Fetching Issues:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Check the fetchMoviesAndShows mock API function and ensure it returns valid JSON data.
+Future Enhancements
+Integrate a real backend API for fetching movies and shows.
+Add pagination for better performance with large datasets.
+Include additional filters, such as by genre or release year.
