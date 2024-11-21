@@ -3,8 +3,16 @@
 This project is a React Native application that provides information about movies and shows, including a pull-to-refresh feature, search functionality, sorting, filtering, and layout toggle (grid/list view).
 
 ---
+![ss-1](https://github.com/user-attachments/assets/6d734ade-7532-4d5e-bdc1-c5bdcc43a915)
+
+![ss-2](https://github.com/user-attachments/assets/0b7bdaee-effd-4dfd-9b6d-c455b55f1639)
+
+https://github.com/user-attachments/assets/4dab30c5-4566-4f06-94df-267944731af3
 
 ## Features
+
+
+
 
 - **Search:** Search movies and shows by title.
 - **Sort:** Sort the list alphabetically (A-Z or Z-A).
